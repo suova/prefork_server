@@ -31,8 +31,6 @@ class Response:
         filename = os.path.normpath(self.root_dir + self.request.get_path())
         if os.path.isdir(filename):
             self.code = FORBIDDEN
-
-        if not os.path.isfile(filename):
             filename = os.path.join(filename, INDEX_PAGE)
 
         try:
@@ -41,6 +39,7 @@ class Response:
                 self.content = content if self.request.get_method() == GET else BYTES_STRING
                 self.content_length = len(content)
                 self.code = OK
+                print('FILE FouND: {}'.format(filename))
         except IOError as e:
             pass
             print('FILE NOT FIND: {}'.format(e.filename))

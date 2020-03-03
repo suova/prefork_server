@@ -7,9 +7,9 @@ def main():
     conf = config()
     count_cpu = int(conf['cpu_limit'])
     document_root = conf['document_root']
-    server = Server(HOST, PORT, QUEUE,  DATA_SIZE, count_cpu, document_root)
+    #server = Server(HOST, PORT, QUEUE,  DATA_SIZE, count_cpu, document_root)
     print("server run")
-    #server = Server("127.0.0.1", 3333, QUEUE, DATA_SIZE, count_cpu, ROOT_DIR)
+    server = Server("127.0.0.1", 3333, QUEUE, DATA_SIZE, count_cpu, ROOT_DIR)
     server.launch()
 
 

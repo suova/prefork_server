@@ -16,7 +16,7 @@ class Request:
             self.url, self.path = urlparse('//' + self.host + uri).geturl(), \
                                   unquote(urlparse('//' + self.host + uri).path)
             self.file_type = self.path.split('.')[-1]
-
+            print(self.url, urlparse('//' + self.host + uri))
     def get_allowed(self):
         return self.allowed
 
